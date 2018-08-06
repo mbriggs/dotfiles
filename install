@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+
+source $DIR/scripts/install-chruby
+
+ln -sf $DIR/bashrc $HOME/.bashrc
+ln -sf $DIR/bash_profile $HOME/.bash_profile
+ln -sf $DIR/dircolors $HOME/.dircolors
+ln -sf $DIR/gemrc $HOME/.gemrc
+ln -sf $DIR/ruby_version $HOME/.ruby_version
+ln -sf $DIR/gitignore $HOME/.gitignore
+ln -sf $DIR/wgetrc $HOME/.wgetrc
+ln -sf $DIR/psqlrc $HOME/.psqlrc
+
+
+if [ -d ~/Dropbox ]
+then
+  ln -sf $HOME/Dropbox/.ssh $HOME/.ssh
+  ln -sf $HOME/Dropbox/.aws $HOME/.aws
+
+  chmod 700 $HOME/.ssh
+  chmod 644 $HOME/.ssh/id_rsa.pub
+  chmod 600 $HOME/.ssh/id_rsa
+  chmod 644 $HOME/.ssh/authorized_keys
+fi

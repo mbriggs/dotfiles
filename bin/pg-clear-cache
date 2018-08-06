@@ -1,0 +1,8 @@
+#!/bin/sh
+#
+# reset the postgres cache
+#
+
+sudo /etc/init.d/postgresql stop
+sudo su -c "echo 3 > /proc/sys/vm/drop_caches"
+sudo /etc/init.d/postgresql start

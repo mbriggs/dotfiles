@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+if  [ `uname` == "Darwin" ]
+then
+  echo "Set a blazingly fast keyboard repeat rate, "
+  defaults write NSGlobalDomain KeyRepeat -int 1
+
+  echo "Set a shorter Delay until key repeat"
+  defaults write NSGlobalDomain InitialKeyRepeat -int 30
+
+  defaults write -g ApplePressAndHoldEnabled -bool false
+fi
