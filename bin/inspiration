@@ -40,7 +40,8 @@ QUOTES = [
   %|Anything that can possibly go wrong, will go wrong. - Murphy's Law|,
   %|It always takes longer than you expect, even when you take into account Hofstadter's Law. — Hofstadter's Law|,
   %|A clever person solves a problem. A wise person avoids it. — Albert Einstein|,
-  %|One accurate measurement is worth more than a thousand expert opinions. - Admiral Grace Hopper|
+  %|One accurate measurement is worth more than a thousand expert opinions. - Admiral Grace Hopper|,
+  %|One object. One primary responsibility. One closure. - Scott Bellware|
 ]
 
 class String
