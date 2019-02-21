@@ -53,7 +53,10 @@ export GEM_PATH=./gems
 export TEST_BENCH_EXCLUDE_PATTERN="_init.rb$"
 
 export EDITOR=vim
+export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
+export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export PATH=$PATH:$HOME/dotfiles/bin
+export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export BLACK="\[\e[0;30m\]" # reverse video
 export CYAN="\[\e[0;32m\]"
@@ -68,4 +71,6 @@ do
   source $file
 done
 
-eval `dircolors .dircolors`
+source "$ICLOUD/Dev/secrets.sh"
+
+eval `dircolors $HOME/.dircolors`

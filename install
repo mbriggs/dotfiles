@@ -1,8 +1,11 @@
 #!/usr/bin/env bash
 
 DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
+DEV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dev"
 
+source $DIR/scripts/install-brew
 source $DIR/scripts/install-chruby
+source $DIR/scripts/install-node
 
 ln -sf $DIR/bashrc $HOME/.bashrc
 ln -sf $DIR/bash_profile $HOME/.bash_profile
@@ -14,11 +17,14 @@ ln -sf $DIR/wgetrc $HOME/.wgetrc
 ln -sf $DIR/psqlrc $HOME/.psqlrc
 
 
-if [ -d ~/Dropbox ]
+if [ -d "$DEV" ]
 then
-  ln -sf $HOME/Dropbox/.ssh $HOME/.ssh
-  ln -sf $HOME/Dropbox/.aws $HOME/.aws
+  ln -sf "$DEV/ssh" $HOME/.ssh
+  ln -sf "$DEV/pgpass" $HOME/.pgpass
+  ln -sf "$DEV/pg_service.conf" $HOME/.pg_service.conf
+  ln -sf "$DEV/aws" $HOME/.aws
 
+  chmod 600 $HOME/.pgpass
   chmod 700 $HOME/.ssh
   chmod 644 $HOME/.ssh/id_rsa.pub
   chmod 600 $HOME/.ssh/id_rsa

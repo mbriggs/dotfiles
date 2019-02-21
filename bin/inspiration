@@ -39,9 +39,13 @@ QUOTES = [
   %|Good judgement is the result of experience. Experience is the result of bad judgement. - Fred Brooks|,
   %|Anything that can possibly go wrong, will go wrong. - Murphy's Law|,
   %|It always takes longer than you expect, even when you take into account Hofstadter's Law. — Hofstadter's Law|,
+  %|First, solve the problem. Then, write the code. - John Johnson |,
+  %|It is far better to improve the effectiveness of testing first than to improve the efficiency of poor testing. Automating chaos just gives faster chaos. - Mark Fewster|,
   %|A clever person solves a problem. A wise person avoids it. — Albert Einstein|,
   %|One accurate measurement is worth more than a thousand expert opinions. - Admiral Grace Hopper|,
-  %|One object. One primary responsibility. One closure. - Scott Bellware|
+  %|One object. One primary responsibility. One closure. - Scott Bellware|,
+  %|The amount of planning you should do before engaging in an increment of work is precisely the amount which will prevent future rework. - Scott Bellware|,
+  %|Test should _never_ presume to specify the _implementation_ of something, rather than specifying the _requirements_ of something. - Scott Bellware|
 ]
 
 class String

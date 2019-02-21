@@ -1,0 +1,8 @@
+#!/bin/sh
+
+if [[ $* = *"--append"* ]]
+then
+  set -- "${@:1:$(($#-1))}"
+fi
+
+ripper-tags --ignore-unsupported-options -R $*

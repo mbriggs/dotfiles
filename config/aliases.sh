@@ -12,5 +12,8 @@ alias ga="git add -A ."
 alias g="git"
 alias gs="git status"
 alias less="less -R"
+alias vi="nvim"
+
+alias rerun-tests="rerun -xc ruby test/automated.rb -- -a"
 
 alias copy-settings="for example in settings/*.example; do cp -v \$example settings/\$(basename \$example .example); done"

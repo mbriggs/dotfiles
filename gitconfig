@@ -19,3 +19,5 @@
   autoupdate = true
 [push]
   default = simple
+[commit]
+	verbose = true
