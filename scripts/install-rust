@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+curl https://sh.rustup.rs -sSf | sh
+rustup component add rls rust-analysis rust-src rustfmt clippy
+sudo rustup completions bash > /etc/bash_completion.d/rustup.bash-completion

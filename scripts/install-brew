@@ -2,4 +2,4 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install wget git rsync coreutils the_silver_searcher bash nnn rg bat htop gnu-sed
+brew install wget git rsync coreutils bash rg bat htop gnu-sed direnv

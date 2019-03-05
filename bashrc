@@ -5,6 +5,9 @@ export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
+# path
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/matt/dotfiles/bin
+
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
@@ -28,6 +31,11 @@ shopt -s cmdhist
 # bash completion
 [ -f /etc/bash_completion ] && source /etc/bash_completion
 
+# direnv
+eval "$(direnv hook bash)"
+
+# rust
+[ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
 # chruby
 [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
@@ -55,7 +63,6 @@ export TEST_BENCH_EXCLUDE_PATTERN="_init.rb$"
 export EDITOR=vim
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-export PATH=$PATH:$HOME/dotfiles/bin
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
 
 export BLACK="\[\e[0;30m\]" # reverse video

@@ -6,6 +6,7 @@ DEV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dev"
 source $DIR/scripts/install-brew
 source $DIR/scripts/install-chruby
 source $DIR/scripts/install-node
+source $DIR/scripts/install-rust
 
 ln -sf $DIR/bashrc $HOME/.bashrc
 ln -sf $DIR/bash_profile $HOME/.bash_profile
