@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
-DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null && pwd )"
-DEV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dev"
+export DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
+export DEV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dev"
 
 source $DIR/scripts/install-brew
 source $DIR/scripts/install-chruby
@@ -17,9 +17,7 @@ ln -sf $DIR/gitignore $HOME/.gitignore
 ln -sf $DIR/wgetrc $HOME/.wgetrc
 ln -sf $DIR/psqlrc $HOME/.psqlrc
 
-
-if [ -d "$DEV" ]
-then
+if [ -d "$DEV" ]; then
   ln -sf "$DEV/ssh" $HOME/.ssh
   ln -sf "$DEV/pgpass" $HOME/.pgpass
   ln -sf "$DEV/pg_service.conf" $HOME/.pg_service.conf

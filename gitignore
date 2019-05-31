@@ -9,5 +9,5 @@ Thumbs.db
 .idea
 .vscode
 .projectile
-tags
-TAGS
+/tags
+/TAGS

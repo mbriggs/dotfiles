@@ -5,8 +5,13 @@ export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
+# make sure lang is set for oni
+export LC_ALL=en_US.UTF-8  
+export LANG=en_US.UTF-8
+export ONI_NEOVIM_PATH="/usr/local/bin/nvim"
+
 # path
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/matt/dotfiles/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.rvm/bin
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
@@ -37,30 +42,35 @@ eval "$(direnv hook bash)"
 # rust
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
-# chruby
-[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-[ -f /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh
+# rbenv
+# [ -f /usr/local/bin/rbenv ] && eval "$(rbenv init -)"
 
-function _chruby() {
-    local cur=${COMP_WORDS[COMP_CWORD]}
-    local rubies="system ${RUBIES[@]##*/}"
+# rvm
+[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-    if [[ $COMP_CWORD -eq 1 ]]; then
-        COMPREPLY=($( compgen -W "$rubies" -- $cur ))
-    fi
-}
-complete -F _chruby chruby
+# # chruby
+# [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
+# [ -f /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh
+
+# function _chruby() {
+#     local cur=${COMP_WORDS[COMP_CWORD]}
+#     local rubies="system ${RUBIES[@]##*/}"
+
+#     if [[ $COMP_CWORD -eq 1 ]]; then
+#         COMPREPLY=($( compgen -W "$rubies" -- $cur ))
+#     fi
+# }
+# complete -F _chruby chruby
 
 # ssh agent
-[ -f $HOME/.ssh/id_rsa ] && ssh-add $HOME/.ssh/id_rsa &> /dev/null
+[ -f $HOME/.ssh/id_rsa ] && ssh-add $HOME/.ssh/id_rsa &>/dev/null
 
 $HOME/dotfiles/bin/inspiration --header
 
 # Ruby configuration
-export GEM_PATH=./gems
 export TEST_BENCH_EXCLUDE_PATTERN="_init.rb$"
 
-export EDITOR=vim
+export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
 export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
 export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
@@ -73,11 +83,10 @@ export GREEN="\[\e[0;36m\]"
 export GRAY="\[\e[0;37m\]"
 export RESET="\[\e[0m\]"
 
-for file in $HOME/dotfiles/config/*.sh
-do
+for file in $HOME/dotfiles/config/*.sh; do
   source $file
 done
 
 source "$ICLOUD/Dev/secrets.sh"
 
-eval `dircolors $HOME/.dircolors`
+eval $(dircolors $HOME/.dircolors)
