@@ -1,4 +1,0 @@
-#!/usr/bin/env bash
-
-curl -L https://git.io/n-install | bash
-brew install yarn --without-node

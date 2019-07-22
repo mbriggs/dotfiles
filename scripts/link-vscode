@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
-rm -rf "~/Library/Application Support/Code/User"
-mkdir -p "~/Library/Application Support/Code/User"
-ln -s "$ICLOUD/VSCode/User" "~/Library/Application Support/Code/User"
+rm -rf "$HOME/Library/Application Support/Code/User"
+mkdir -p "$HOME/Library/Application Support/Code"
+ln -s "$ICLOUD/VSCode/User" "$HOME/Library/Application Support/Code/User"
 
-rm -rf "~/.vscode"
-ln -s "$ICLOUD/VSCode/.vscode" "~/.vscode"
+rm -rf "$HOME/.vscode"
+ln -s "$ICLOUD/VSCode/.vscode" "$HOME/.vscode"

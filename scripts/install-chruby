@@ -16,3 +16,5 @@ cd ruby-install-$RUBY_INSTALL/
 sudo make install
 cd -
 rm -rf ruby-install-$RUBY_INSTALL
+rm -rf ruby-install-$RUBY_INSTALL.tar.gz
+touch $HOME/dotfiles/.ruby-installed

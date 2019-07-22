@@ -2,4 +2,8 @@
 
 curl https://sh.rustup.rs -sSf | sh
 rustup component add rls rust-analysis rust-src rustfmt clippy
-sudo rustup completions bash > /etc/bash_completion.d/rustup.bash-completion
+rustup completions bash >rustup.bash-completion
+sudo mkdir -p /etc/bash_completion.d
+sudo mv rustup.bash-completion /etc/bash_completion.d
+
+touch $HOME/dotfiles/.rust-installed
