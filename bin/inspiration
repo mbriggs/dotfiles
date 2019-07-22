@@ -3,6 +3,7 @@
 
 QUOTES = [
   %|Most of the biggest problems in software are problems of misconception. - Rich Hickey|,
+  %|The most important single aspect of software development is to be clear about what you are trying to build. - Bjarne Stroustrup|,
   %|Constraints are advantages in disguise. - 37 Signals|,
   %|Don't have good ideas if you aren't willing to be responsible for them. - Alan Perlis|,
   %|Fools ignore complexity. Pragmatists suffer it. Some can avoid it. Geniuses remove it. - Alan Perlis|,
