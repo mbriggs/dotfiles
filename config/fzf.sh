@@ -1,11 +1,5 @@
 #!/usr/bin/env bash
 
-# fif - find in files
-fif() {
-  if [ ! "$#" -gt 0 ]; then echo "Need a string to search for!"; return 1; fi
-  rg --files-with-matches --no-messages "$1" | fzf --preview "highlight -O ansi -l {} 2> /dev/null | rg --colors 'match:bg:yellow' --ignore-case --pretty --context 10 '$1' || rg --ignore-case --pretty --context 10 '$1' {}"
-}
-
 # fkill - kill process
 fkill() {
   local pid
@@ -18,7 +12,7 @@ fkill() {
 }
 
 # fco - checkout git branch/tag
-fco() {
+gco() {
   local tags branches target
   branches=$(
     git --no-pager branch --all \
@@ -35,7 +29,7 @@ fco() {
 
 
 # fco_preview - checkout git branch/tag, with a preview showing the commits between the tag/branch and HEAD
-fco_preview() {
+gocp() {
   local tags branches target
   branches=$(
     git --no-pager branch --all \
@@ -51,7 +45,7 @@ fco_preview() {
 }
 
 # fshow - git commit browser
-fshow() {
+glog() {
   git log --graph --color=always \
       --format="%C(auto)%h%d %s %C(black)%C(bold)%cr" "$@" |
   fzf --ansi --no-sort --reverse --tiebreak=index --bind=ctrl-s:toggle-sort \

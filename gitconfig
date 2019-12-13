@@ -1,8 +1,6 @@
 [user]
   name = Matt Briggs
   email = matt@mattbriggs.net
-[push]
-  default = tracking
 [color]
   ui = true
 [core]
