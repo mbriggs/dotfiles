@@ -2,6 +2,7 @@
 
 if  [ `uname` == "Darwin" ]
 then
+  export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
   if [ -f /usr/local/bin/gls ]
   then
     alias ls='gls --color'

@@ -1,23 +1,11 @@
 #!/usr/bin/env bash
 
 export DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null && pwd)"
-export DEV="$HOME/Library/Mobile Documents/com~apple~CloudDocs/Dev"
-
-if [ ! -e ".brew-installed" ]; then
-  source $DIR/scripts/install-brew
-fi
-
-if [ ! -e ".ruby-installed" ]; then
-  source $DIR/scripts/install-ruby
-fi
-
-if [ ! -e ".rust-installed" ]; then
-  source $DIR/scripts/install-rust
-fi
 
 ln -sf $DIR/bashrc $HOME/.bashrc
 ln -sf $DIR/bash_profile $HOME/.bash_profile
 ln -sf $DIR/dircolors $HOME/.dircolors
+ln -sf $DIR/fzf.bash $HOME/.fzf.bash
 ln -sf $DIR/gemrc $HOME/.gemrc
 ln -sf $DIR/ruby_version $HOME/.ruby_version
 ln -sf $DIR/gitignore $HOME/.gitignore
@@ -25,15 +13,7 @@ ln -sf $DIR/gitconfig $HOME/.gitconfig
 ln -sf $DIR/wgetrc $HOME/.wgetrc
 ln -sf $DIR/psqlrc $HOME/.psqlrc
 
-if [ -d "$DEV" ]; then
-  ln -sf "$DEV/ssh" $HOME/.ssh
-  ln -sf "$DEV/pgpass" $HOME/.pgpass
-  ln -sf "$DEV/pg_service.conf" $HOME/.pg_service.conf
-  ln -sf "$DEV/aws" $HOME/.aws
-
-  chmod 600 $HOME/.pgpass
   chmod 700 $HOME/.ssh
   chmod 644 $HOME/.ssh/id_rsa.pub
   chmod 600 $HOME/.ssh/id_rsa
   chmod 644 $HOME/.ssh/authorized_keys
-fi

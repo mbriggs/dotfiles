@@ -6,7 +6,7 @@ export HISTCONTROL=ignoredups:ignorespace
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
 # make sure lang is set for oni
-export LC_ALL=en_US.UTF-8  
+export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ONI_NEOVIM_PATH="/usr/local/bin/nvim"
 
@@ -72,8 +72,7 @@ export TEST_BENCH_EXCLUDE_PATTERN="_init.rb$"
 
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='rg --files --hidden --follow --glob "!.git/*"'
-export FZF_DEFAULT_OPTS="--ansi --preview-window 'right:60%' --preview 'bat --color=always --style=header,grid --line-range :300 {}'"
-export ICLOUD="$HOME/Library/Mobile Documents/com~apple~CloudDocs"
+export FZF_DEFAULT_OPTS="--ansi --exact"
 
 export BLACK="\[\e[0;30m\]" # reverse video
 export CYAN="\[\e[0;32m\]"
@@ -87,6 +86,10 @@ for file in $HOME/dotfiles/config/*.sh; do
   source $file
 done
 
-source "$ICLOUD/Dev/secrets.sh"
-
 eval $(dircolors $HOME/.dircolors)
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
