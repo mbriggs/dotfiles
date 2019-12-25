@@ -2,6 +2,6 @@
 
 /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 
-brew install wget git rsync coreutils bash rg bat htop gnu-sed direnv yarn node
+brew install wget git rsync coreutils bash rg bat htop direnv yarn node findutils gnu-indent gnu-sed gnutls grep gnu-tar gawk
 
 touch $HOME/dotfiles/.brew-installed

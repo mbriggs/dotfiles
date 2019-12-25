@@ -11,5 +11,12 @@ then
     alias ls='ls -G'
   fi
 
+  gnu=(coreutils findutils gnu-indent gnu-sed gnutls grep gnu-tar gawk)
+
+  for package in "${gnu[@]}"
+  do
+    export PATH=/usr/local/opt/$package/libexec/gnubin:$PATH
+  done
+
   export PATH=/usr/local/bin:$PATH
 fi
