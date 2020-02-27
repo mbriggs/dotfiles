@@ -19,3 +19,7 @@
   default = current
 [commit]
 	verbose = true
+[github]
+	user = mbriggs
+[merge]
+	conflictStyle = diff3

@@ -11,6 +11,7 @@ alias g="git"
 alias gs="git status"
 alias less="less -R"
 alias vi="nvim"
+alias makels="make -qp | awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' | sort -u"
 
 alias rerun-tests="rerun -xc ruby test/automated.rb -- -a"
 
