@@ -5,13 +5,20 @@ export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
+export RETINA_SCALE_FACTOR=2
+
+export QT_AUTO_SCREEN_SCALE_FACTOR=1
+# export QT_ENABLE_HIGHDPI_SCALING=0
+# export AUTO_SCREEN_SCALE_FACTOR=1
+# export QT_SCALE_FACTOR=$RETINA_SCALE_FACTOR
+
 # make sure lang is set for oni
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ONI_NEOVIM_PATH="/usr/local/bin/nvim"
 
 # path
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.rvm/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.gem/ruby/2.5.0/bin
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
