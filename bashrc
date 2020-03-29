@@ -5,9 +5,9 @@ export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-export RETINA_SCALE_FACTOR=2
-
-export QT_AUTO_SCREEN_SCALE_FACTOR=1
+export MOZ_ENABLE_WAYLAND=1
+export QT_SCALE_FACTOR=2.5 
+export QT_AUTO_SCREEN_SCALE_FACTOR=0.8
 # export QT_ENABLE_HIGHDPI_SCALING=0
 # export AUTO_SCREEN_SCALE_FACTOR=1
 # export QT_SCALE_FACTOR=$RETINA_SCALE_FACTOR
