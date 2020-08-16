@@ -12,6 +12,8 @@
   insteadOf = "gh:"
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
+[url "ssh://git@github.com/"]
+  insteadOf = https://github.com/
 [rerere]
   enabled = 1
   autoupdate = true
@@ -23,3 +25,5 @@
 	user = mbriggs
 [merge]
 	conflictStyle = diff3
+[credential]
+	helper = store
