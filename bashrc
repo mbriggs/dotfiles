@@ -15,6 +15,8 @@ export QT_AUTO_SCREEN_SCALE_FACTOR=0.8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 export ONI_NEOVIM_PATH="/usr/local/bin/nvim"
+export NODE_OPTIONS=--max_old_space_size=4096
+export GOPRIVATE="github.com/mbriggs"
 
 # path
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.gem/ruby/2.7.0/bin
