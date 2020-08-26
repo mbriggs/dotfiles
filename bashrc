@@ -56,9 +56,9 @@ eval "$(direnv hook bash)"
 # rvm
 [[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
 
-# # chruby
-# [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
-# [ -f /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh
+# chruby
+[ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
+[ -f /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh
 
 # function _chruby() {
 #     local cur=${COMP_WORDS[COMP_CWORD]}
