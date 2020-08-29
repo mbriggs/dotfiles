@@ -1,4 +1,5 @@
 *.pyc
+.solargraph.yml
 .DS_Store
 Desktop.ini
 ._*
