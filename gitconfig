@@ -9,7 +9,7 @@
   excludesfile = /Users/matt/.gitignore
   autocrlf = input
 [url "git@github.com:"]
-  insteadOf = "gh:"
+	insteadOf = https://github.com/
   pushInsteadOf = "github:"
   pushInsteadOf = "git://github.com/"
 [url "ssh://git@github.com/"]
