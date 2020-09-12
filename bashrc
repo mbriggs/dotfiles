@@ -5,11 +5,8 @@ export HISTCONTROL=ignoredups:ignorespace
 # Make some commands not show up in history
 export HISTIGNORE="ls:cd:cd -:pwd:exit:date:* --help"
 
-export QT_SCALE_FACTOR=2.5 
+export QT_SCALE_FACTOR=2.5
 export QT_AUTO_SCREEN_SCALE_FACTOR=0.8
-# export QT_ENABLE_HIGHDPI_SCALING=0
-# export AUTO_SCREEN_SCALE_FACTOR=1
-# export QT_SCALE_FACTOR=$RETINA_SCALE_FACTOR
 
 # make sure lang is set for oni
 export LC_ALL=en_US.UTF-8
@@ -50,25 +47,19 @@ eval "$(direnv hook bash)"
 # rust
 [ -f $HOME/.cargo/env ] && source $HOME/.cargo/env
 
-# rbenv
-# [ -f /usr/local/bin/rbenv ] && eval "$(rbenv init -)"
-
-# rvm
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && source "$HOME/.rvm/scripts/rvm" # Load RVM into a shell session *as a function*
-
 # chruby
 [ -f /usr/local/share/chruby/chruby.sh ] && source /usr/local/share/chruby/chruby.sh
 [ -f /usr/local/share/chruby/auto.sh ] && source /usr/local/share/chruby/auto.sh
 
-# function _chruby() {
-#     local cur=${COMP_WORDS[COMP_CWORD]}
-#     local rubies="system ${RUBIES[@]##*/}"
+function _chruby() {
+    local cur=${COMP_WORDS[COMP_CWORD]}
+    local rubies="system ${RUBIES[@]##*/}"
 
-#     if [[ $COMP_CWORD -eq 1 ]]; then
-#         COMPREPLY=($( compgen -W "$rubies" -- $cur ))
-#     fi
-# }
-# complete -F _chruby chruby
+    if [[ $COMP_CWORD -eq 1 ]]; then
+        COMPREPLY=($( compgen -W "$rubies" -- $cur ))
+    fi
+}
+complete -F _chruby chruby
 
 # ssh agent
 [ -f $HOME/.ssh/id_rsa ] && ssh-add $HOME/.ssh/id_rsa &>/dev/null
