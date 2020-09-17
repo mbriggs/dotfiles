@@ -16,7 +16,7 @@ export NODE_OPTIONS=--max_old_space_size=4096
 export GOPRIVATE="github.com/mbriggs"
 
 # path
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.gem/ruby/2.7.0/bin
+export PATH=/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/dotfiles/bin:$HOME/go/bin:$HOME/.gem/ruby/bin
 
 # make less more friendly for non-text input files, see lesspipe(1)
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
