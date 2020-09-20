@@ -13,8 +13,6 @@ alias less="less -R"
 alias vi="nvim"
 alias makels="make -qp | awk -F':' '/^[a-zA-Z0-9][^$#\/\t=]*:([^=]|$)/ {split($1,A,/ /);for(i in A)print A[i]}' | sort -u"
 
-alias rerun-tests="rerun -xc ruby test/automated.rb -- -a"
-
 alias copy-settings="for example in settings/*.example; do cp -v \$example settings/\$(basename \$example .example); done"
 
 function gpu()
