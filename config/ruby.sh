@@ -2,11 +2,14 @@
 
 function setup-gemstash() {
     gem install gemstash
-    sudo systemctl enable --user $HOME/dotfiles/gemstash.service
-    sudo systemctl --user daemon-reload
-    sudo systemctl start --user gemstash.service
+    systemctl enable --user $HOME/dotfiles/gemstash.service
+    systemctl --user daemon-reload
+    systemctl start --user gemstash.service
+    bundle config mirror.https://rubygems.org http://localhost:9292
+    bundle config mirror.https://rubygems.org.fallback_timeout true
 }
 
 function trb() {
-    reflex -s -g '**/*.rb' --decoration=none -- ruby test/automated.rb
+    reflex -s -r '\.rb$' --decoration=none -- ruby test/automated.rb
 }
+
