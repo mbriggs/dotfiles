@@ -8,4 +8,4 @@ WorkingDirectory=/home/mbriggs
 ExecStart=/home/mbriggs/.gem/ruby/bin/gemstash start --no-daemonize
 
 [Install]
-WantedBy=multi-user.target
+WantedBy=default.target
